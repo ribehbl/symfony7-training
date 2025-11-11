@@ -1,0 +1,19 @@
+{
+    "name": "Symfony DevContainer",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "symfony",
+    "workspaceFolder": "/var/www/html",
+    "forwardPorts": [8080],
+    "postCreateCommand": "composer install",
+    "remoteUser": "root",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "bmewburn.vscode-intelephense-client",
+          "xdebug.php-debug",
+          "esbenp.prettier-vscode"
+        ]
+      }
+    }
+  }
+  

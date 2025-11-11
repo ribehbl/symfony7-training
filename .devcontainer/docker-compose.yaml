@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  symfony:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: symfony_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ..:/var/www/html:cached
+    environment:
+      APP_ENV: dev
+      DATABASE_URL: mysql://symfony:symfony@db:3306/symfony
+    depends_on:
+      - db
+      - db_test
+
+  db:
+    image: mysql:8.0
+    container_name: symfony_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+    ports:
+      - "3307:3306"
+    volumes:
+      - symfony_db_data:/var/lib/mysql
+
+  db_test:
+    image: mysql:8.0
+    container_name: symfony_db_test
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony_test
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+    ports:
+      - "3308:3306"
+    volumes:
+      - symfony_db_test_data:/var/lib/mysql
+
+volumes:
+  symfony_db_data:
+  symfony_db_test_data:

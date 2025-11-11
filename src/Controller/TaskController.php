@@ -10,9 +10,11 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 
 class TaskController extends AbstractController
 {
+    #[Route("/task/new", name="task_new")]
     public function new(Request $request): Response
     {
         // creates a task object and initializes some data for this example
