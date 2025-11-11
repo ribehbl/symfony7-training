@@ -1,0 +1,15 @@
+<h1>Your lucky number is {{ number }}</h1>
+
+<br> <h1>projectDir:</h1> {{ project_dir }}
+<br><br>
+
+Route : {{app.current_route}}
+
+<br>
+Login URL:
+{{ path('login') }}
+
+<script>
+    const route = "{{ path('blog_index', {title: 'my-blog-post'})|escape('js') }}";
+    console.log("Blog URL: " + route);
+</script>

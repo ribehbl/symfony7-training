@@ -1,0 +1,8 @@
+39161c,172.23.0.1,GET,http://localhost:8080/product,1762833425,,200,request
+c5efd1,172.23.0.1,GET,http://localhost:8080/product/new,1762833428,,200,request
+372a85,172.23.0.1,POST,http://localhost:8080/product/new,1762833441,,303,request
+6ec00a,172.23.0.1,GET,http://localhost:8080/product,1762833441,,200,request
+5b0cdf,172.23.0.1,GET,http://localhost:8080/product/1,1762833445,,200,request
+11633f,172.23.0.1,GET,http://localhost:8080/product/1/edit,1762833447,,200,request
+a94255,172.23.0.1,POST,http://localhost:8080/product/1/edit,1762833458,,303,request
+c37860,172.23.0.1,GET,http://localhost:8080/product,1762833458,,200,request

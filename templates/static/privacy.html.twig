@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Home Page{% endblock %}
+
+{% block body %}
+Route Name Test : {{app.current_route}}
+<br> 
+
+
+loacle: {{app.locale}} ----- enabled_locales: {{app.enabled_locales |json_encode}}
+
+{% if app.debug %}
+    <p>Request method: {{ app.request.method }}</p>
+    <p>Application Environment: {{ app.environment }}</p>
+{% endif %}
+{% endblock %}

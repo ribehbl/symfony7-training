@@ -1,0 +1,19 @@
+# config/routes/attributes.yaml
+controllers:
+    resource:
+        path: ../../src/Controller/
+        namespace: App\Controller
+    type: attribute
+    #schemes: [https] #forces HTTPS on all routes defined as attributes | or , "requires_channel: https" in routes access_control
+    # prefix:
+    #     en: '' # don't prefix URLs for English, the default locale
+    #     nl: '/nl'
+    # host:
+    #     en: 'www.example.com'
+    #     nl: 'www.example.nl'
+    #trailing_slash_on_root: false
+
+
+kernel:
+    resource: App\Kernel
+    type: attribute
